@@ -1,0 +1,75 @@
+---
+title: "Latihan 2"
+author: "Hilmi"
+date: "24/9/2021"
+output: pdf_document
+---
+
+```
+str (murders)
+
+```
+
+## nomor 1
+'data.frame' :	51 obs. of  5 variables:
+ $ state     : chr  "Alabama" "Alaska" "Arizona" "Arkansas" ...
+ $ abb       : chr  "AL" "AK" "AZ" "AR" ...
+ $ region    : Factor w/ 4 levels "Northeast","South",..: 2 4 4 2 4 4                1 2   2 2 ...
+ $ population: num  4779736 710231 6392017 2915918 37253956 ...
+ $ total     : num  135 19 232 93 1257 ...
+ 
+  Jawaban yang paling benar adalah C, karena data yang ada didalam pilihan tersebut berupa nama negara bagian, singkatan dari beberapa negara bagian, wilayah negara bagian, populasi negara bagian dan juga total jumlah pembunuhan pada tahun 2010. Pilihan C sesuai dengan hasil tampilan setelah menulis str(murders) pada console.
+ 
+## nomor 2
+```
+ names(murders)
+#> [1] "state"      "abb"        "region"     "population" "total"
+
+```
+nama kolom yang digunakan adalah state, abb, region, population, total.
+
+## nomor 3
+```
+> a  = murders$abb
+> class(a)
+[1] "character"
+
+```
+ abb tersimpan di variabel a dan bertipe data char.
+
+## nomor 4
+```
+> b = murders[[2]]
+> class(b)
+[1] "character"
+
+```
+Mengestrak singkatan negara dan menyimpannya pada variabel b.
+
+```
+> a == b 
+ [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+[16] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+[31] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+[46] TRUE TRUE TRUE TRUE TRUE TRUE
+
+```
+Hasil perbandingan semuanya TRUE maka kedua variabel memiliki data yang sama.
+
+##nomor 5
+Menentukan jumlah region yang dimiliki oleh dataset 
+```
+> length(levels(murders$region))
+[1] 4
+
+```
+
+##nomor 6
+Menampilkan table yang berisi jumlah state pada tiap region 
+```
+> table(murders$region)
+    Northeast         South North Central          West 
+            9            17            12            13 
+```
+
+
