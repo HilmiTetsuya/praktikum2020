@@ -1,0 +1,90 @@
+---
+title: "Tugas Modul 4"
+author: "Hilmi"
+date: "1/10/2021"
+output: pdf_document
+---
+
+## nomor 1
+
+library(dslabs)
+
+data(murders)
+
+a =sort(murders$population)
+
+pop = min(a)
+
+pop
+
+
+## nomor 2
+
+indeks <- order(pop)
+
+indeks
+
+
+## nomor 3
+
+murders$population[which.min(murders$population)]
+
+
+## nomor 4
+
+i_min <- which.min(murders$population)
+
+murders$state[i_min]
+
+
+## nomor 5
+
+population <- c(murders$population)
+
+state <- c(murders$state)
+
+my_df <- data.frame(state,population)
+
+rank(my_df)
+
+
+## nomor 6
+
+ind <- order(rank(my_df))
+
+ind
+
+
+## nomor 7
+
+population_in_millions <- murders$population/10^6
+
+total_gun_murders <- murders$total
+
+x = transform(log(population_in_millions))
+
+y = transform(log(total_gun_murders))
+
+plot(x,y)
+
+
+## nomor 8
+
+population <- with(murders, total / population * 100000)
+
+hist(population)
+
+
+## nomor 9
+
+murders$rate <- with(murders, total / population * 100000)
+
+boxplot(rate~region, data = murders)
+
+
+
+
+
+
+
+
