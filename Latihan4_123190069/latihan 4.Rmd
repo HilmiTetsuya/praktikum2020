@@ -1,0 +1,54 @@
+---
+title: "Tugas Modul 7"
+author: "M Hilmi Abdillah_123190069"
+date: "9/11/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+##nomor 1
+```{r}
+library(dslabs)
+library(tidyverse)
+data(murders)
+as_tibble(murders) %>% class()
+murders_tibble <- as_tibble(murders) %>% class()
+
+```
+
+##nomor 2
+```{r}
+as_tibble(murders) %>% group_by(region)
+
+```
+
+##nomor 3
+library(dslabs)
+library(dplyr)
+data(murders)
+murders %>% 
+  pull(population) %>%
+  log %>%
+  mean %>%
+  exp
+  
+```
+
+##nomor 4
+library(purrr)
+compute_s_n <-function(n){
+  a<- 1:n
+  sum(a)
+}
+n <- 1:100
+s_n <- sapply(n, compute_s_n)
+compute_s_n <- function(n){
+  a <- 1:n
+  tibble(sum = sum(a))
+}
+s_n <- map_df(n, compute_s_n)
+as_tibble(s_n)
+
+```
